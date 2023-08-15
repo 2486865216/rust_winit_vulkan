@@ -10,7 +10,7 @@ use vulkano::memory::allocator::MemoryUsage;
 use crate::example::glsl;
 // use crate::example::glsl::cs;
 
-pub fn test() {
+pub fn operator_computer() {
     let data_iter = 0..65536u32;
 
     let instance = create_instance();
