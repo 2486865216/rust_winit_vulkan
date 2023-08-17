@@ -5,12 +5,27 @@ use winit::{
 };
 
 use my_winit::example::buffer::*;
+use std::time::{SystemTime, UNIX_EPOCH};
+use my_winit::example::compute::operator_computer;
+use my_winit::example::graphics_pipeline::operator_vertex;
+use my_winit::example::image_shader::operator_image_shader;
+use my_winit::example::images::operator_image;
 
 fn main() {
+    let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
+    println!("{:?}", now);
+
     operator_buffer();
+    operator_computer();
+    operator_image();
+    operator_image_shader();
+    operator_vertex();
+
+    let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
+    println!("{:?}", now);
 
     //winit
-    let event_loop = EventLoop::new();
+    /*let event_loop = EventLoop::new();
     let window = WindowBuilder::new().build(&event_loop).unwrap();
 
     event_loop.run(move |event, _, control_flow| {
@@ -23,7 +38,7 @@ fn main() {
             } if window_id == window.id() => *control_flow = ControlFlow::Exit,
             _ => (),
         }
-    })
+    })*/
 }
 /*#[allow(unused)]
 fn main() {

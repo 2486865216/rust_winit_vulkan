@@ -110,7 +110,7 @@ pub fn get_queue(physical_device: Arc<PhysicalDevice>) -> u32 {
 
 //创建设备 创建设备返回两件事：设备本身，以及队列对象列表 稍后将允许我们提交操作。
 pub fn create_device(physical_device: Arc<PhysicalDevice>, queue_family_index: u32) -> (Arc<Device>, impl ExactSizeIterator<Item=Arc<Queue>>) {
-    let (device, mut queues) = Device::new(
+    let (device, queues) = Device::new(
         physical_device,
         DeviceCreateInfo {
             queue_create_infos: vec![QueueCreateInfo {
@@ -119,8 +119,7 @@ pub fn create_device(physical_device: Arc<PhysicalDevice>, queue_family_index: u
             }],
             ..Default::default()
         },
-    )
-        .expect("failed to create device");
+    ).expect("failed to create device");
 
     (device, queues)
 }

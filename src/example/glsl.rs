@@ -1,6 +1,5 @@
 #![allow(unused)]
-
-/*pub mod cs {
+pub mod cs {
     vulkano_shaders::shader! {
         ty: "compute",
         src: r"
@@ -19,4 +18,3 @@
         ",
     }
 }
-*/
