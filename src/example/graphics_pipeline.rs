@@ -41,9 +41,9 @@ use crate::example::pipeline_glsl::{fs, vs};
 //顶点数据
 #[derive(BufferContents, Vertex)]
 #[repr(C)]
-struct MyVertex {
+pub struct MyVertex {
     #[format(R32G32_SFLOAT)]
-    position: [f32; 2],
+    pub position: [f32; 2],
 }
 
 pub fn operator_vertex() {

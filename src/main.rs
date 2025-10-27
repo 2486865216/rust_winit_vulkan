@@ -1,18 +1,8 @@
-use winit::{
-    event::{Event, WindowEvent},
-    event_loop::{ControlFlow, EventLoop},
-    window::WindowBuilder,
-};
 
-use my_winit::example::buffer::*;
-use std::time::{SystemTime, UNIX_EPOCH};
-use my_winit::example::compute::operator_computer;
-use my_winit::example::graphics_pipeline::operator_vertex;
-use my_winit::example::image_shader::operator_image_shader;
-use my_winit::example::images::operator_image;
+use my_winit::example::windows::create_window;
 
 fn main() {
-    let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
+    /*let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
     println!("{:?}", now);
 
     operator_buffer();
@@ -23,6 +13,8 @@ fn main() {
 
     let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
     println!("{:?}", now);
+*/
+    create_window();
 
     //winit
     /*let event_loop = EventLoop::new();
